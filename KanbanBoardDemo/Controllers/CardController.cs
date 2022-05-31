@@ -14,6 +14,13 @@ namespace KanbanBoardDemo.Controllers
         }
 
         [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
         public IActionResult Details(int id)
         {
             var viewModel = _cardService.GetDetails(id);

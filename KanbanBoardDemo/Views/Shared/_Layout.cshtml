@@ -15,6 +15,10 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/jkanban.min.css" />
+
+
+
 </head>
 <body>
     <div>
@@ -27,6 +31,11 @@
                             Boards
                         </a>
                     </li>
+                    <li>
+                        <a asp-controller="Card" asp-action="Index">
+                            Kanban Board Using KanbanJS Lib
+                        </a>
+                    </li>
                 </ul> 
             </div>
         </nav>
@@ -34,5 +43,8 @@
     <div>
         @RenderBody()
     </div>
+
+    <script src="~/js/jkanban.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
