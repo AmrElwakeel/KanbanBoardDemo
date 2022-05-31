@@ -39,5 +39,15 @@ namespace KanbanBoardDemo.Controllers
 
             return RedirectToAction(nameof(Index), new { id = viewModel.Id });
         }
+
+        public IActionResult MoveCard([FromBody] MoveCardCommand command)
+        {
+            _boardService.Move(command);
+
+            return Ok(new
+            {
+                Moved = true
+            });
+        }
     }
 }
