@@ -77,15 +77,13 @@ namespace KanbanBoardDemo.Services
 
             if (board != null)
             {
-                var firstColumn = board.Columns.FirstOrDefault();
-                var secondColumn = board.Columns.FirstOrDefault();
-                var thirdColumn = board.Columns.FirstOrDefault();
+                var firstColumn = board.Columns.FirstOrDefault(); 
 
-                if (firstColumn == null || secondColumn == null || thirdColumn == null)
+                if (firstColumn == null)
                 {
                     firstColumn = new Models.Column { Title = "Todo" };
-                    secondColumn = new Models.Column { Title = "Doing" };
-                    thirdColumn = new Models.Column { Title = "Done" };
+                    var secondColumn = new Models.Column { Title = "Doing" };
+                    var thirdColumn = new Models.Column { Title = "Done" };
                     board.Columns.Add(firstColumn);
                     board.Columns.Add(secondColumn);
                     board.Columns.Add(thirdColumn);
